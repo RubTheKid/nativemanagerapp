@@ -22,7 +22,7 @@ function SellersStackScreen() {
   return (
     <SellersStack.Navigator>
       <SellersStack.Screen name="SellersDashboard" component={SellersDashboard} />
-      {/* Adicione outras telas do vendedor, se necessário */}
+
     </SellersStack.Navigator>
   );
 }
@@ -31,7 +31,7 @@ function SuppliersStackScreen() {
   return (
     <SuppliersStack.Navigator>
       <SuppliersStack.Screen name="SuppliersDashboard" component={SuppliersDashboard} />
-      {/* Adicione outras telas de fornecedores, se necessário */}
+   
     </SuppliersStack.Navigator>
   );
 }
