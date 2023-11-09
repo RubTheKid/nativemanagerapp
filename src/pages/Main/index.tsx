@@ -1,18 +1,8 @@
 import React from 'react';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Navigation from '../../routes/navigation';
-
-import { Ionicons } from '@expo/vector-icons';
-import { ThemeProvider } from 'styled-components/native';
-
-import theme from '../../components/ui/.global/styles/theme';
-
-
-import { SellersDashboard } from '../Sellers/Dashboard';
-import { SuppliersDashboard } from '../suppliers/Dashboard';
-import { createStackNavigator } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 import { Button, View } from 'react-native';
+import { Container } from '../../components/ui/.global/styles/contentStyles';
+import { Header } from '../../components/ui/Header';
 
 export function MainComponent() {
     const navigation = useNavigation();
@@ -26,7 +16,10 @@ export function MainComponent() {
   
     return (
       <>
-        <View>
+      <Container>
+            <Header title="Fornecedores" />
+        
+        
           <Button
             title="Go to Sellers Dashboard"
             onPress={handleNavigateToSellers}
@@ -35,7 +28,7 @@ export function MainComponent() {
             title="Go to Suppliers Dashboard"
             onPress={handleNavigateToSuppliers}
           />
-        </View>
+        </Container>
       </>
     );
   }
