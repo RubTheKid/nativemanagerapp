@@ -12,21 +12,32 @@ import { ThemeProvider } from 'styled-components/native';
 import theme from './src/components/ui/.global/styles/theme'
 import { Container } from './src/components/ui/.global/styles/contentStyles';
 import { Header } from './src/components/ui/Header';
-import { Main } from './src/pages/Main';
+import { MainComponent,  } from './src/pages/Main';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createNativeStackNavigator();
 
 function App() {
-return (
-  <Main />
-);
+  return (
+    <ThemeProvider theme={theme}>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="MainScreen">
+        <Stack.Screen name="MainScreen" component={MainComponent} />
+        <Stack.Screen name="SellersDashboard" component={SellersDashboard} />
+        <Stack.Screen name="SuppliersDashboard" component={SuppliersDashboard} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    </ThemeProvider>
+  );
 }
 
 export default App;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
