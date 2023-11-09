@@ -1,0 +1,4 @@
+npm install react-native-responsive-fontsize
+npm install styled-components
+npm i @react-navigation/native-stack
+npm i @react-navigation/native      
