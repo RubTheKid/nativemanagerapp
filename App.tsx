@@ -19,10 +19,12 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
+    
     <ThemeProvider theme={theme}>
-    <NavigationContainer>
+      <StatusBar hidden />
+    <NavigationContainer >
       <Stack.Navigator initialRouteName="MainScreen">
-        <Stack.Screen name="MainScreen" component={MainComponent} />
+        <Stack.Screen name="MainScreen" component={MainComponent} options={{ headerShown: false }}/>
         <Stack.Screen name="SellersDashboard" component={SellersDashboard} />
         <Stack.Screen name="SuppliersDashboard" component={SuppliersDashboard} />
       </Stack.Navigator>
@@ -33,11 +35,3 @@ function App() {
 
 export default App;
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });

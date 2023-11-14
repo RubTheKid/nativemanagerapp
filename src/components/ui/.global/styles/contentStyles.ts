@@ -25,3 +25,5 @@ export const Transactions = styled.View`
     margin-top: 14px;
 
 `
+
+

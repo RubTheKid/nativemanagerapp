@@ -3,6 +3,10 @@ import { useNavigation } from '@react-navigation/native';
 import { Button, View } from 'react-native';
 import { Container } from '../../components/ui/.global/styles/contentStyles';
 import { Header } from '../../components/ui/Header';
+import { ThemeProvider } from 'styled-components/native';
+
+import { MyButton } from '../../components/ui/.global/Button'
+
 
 export function MainComponent() {
     const navigation = useNavigation();
@@ -15,21 +19,20 @@ export function MainComponent() {
     };
   
     return (
-      <>
+    
       <Container>
-            <Header title="Fornecedores" />
-        
-        
-          <Button
-            title="Go to Sellers Dashboard"
-            onPress={handleNavigateToSellers}
-          />
-          <Button
-            title="Go to Suppliers Dashboard"
-            onPress={handleNavigateToSuppliers}
-          />
+        <Header title="Fornecedores" />
+
+        <MyButton
+          title="Gerenciar Vendedores"
+          onPress={handleNavigateToSellers}
+          theme="primary" />
+      <MyButton
+          title="Gerenciar Fornecedores"
+          onPress={handleNavigateToSuppliers} 
+          theme="secondary"/>
         </Container>
-      </>
+      
     );
   }
   
