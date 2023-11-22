@@ -1,34 +1,36 @@
 import React from 'react';
-
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-import { SellersDashboard } from './src/pages/Sellers/Dashboard';
-import { SuppliersDashboard } from './src/pages/suppliers/Dashboard';
-
+// import { StatusBar } from 'expo-status-bar';
+import * as Font from 'expo-font';
 import { ThemeProvider } from 'styled-components/native';
-import theme from './src/components/ui/.global/styles/theme'
-import { Container } from './src/components/ui/.global/styles/contentStyles';
-import { Header } from './src/components/ui/Header';
-import { MainComponent,  } from './src/pages/Main';
-import { createStackNavigator } from '@react-navigation/stack';
+import { StyleSheet, View, Text, StatusBar } from 'react-native'
 
-const Stack = createNativeStackNavigator();
+import theme from './src/components/ui/.global/styles/theme'
+import { AppRoutes } from './src/routes/app.routes';
+import { RootRoutes } from './src/routes';
+import { Poppins_400Regular, Poppins_500Medium, Poppins_700Bold, useFonts } from '@expo-google-fonts/poppins';
+
 
 function App() {
+  const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_700Bold
+  })
+
+  if (!fontsLoaded) {
+    return (
+      <View>
+        <Text>Carregando</Text>
+      </View>
+    )
+  }
   return (
     
     <ThemeProvider theme={theme}>
-      <StatusBar hidden />
-    <NavigationContainer >
-      <Stack.Navigator initialRouteName="MainScreen">
-        <Stack.Screen name="MainScreen" component={MainComponent} options={{ headerShown: false }}/>
-        <Stack.Screen name="SellersDashboard" component={SellersDashboard} />
-        <Stack.Screen name="SuppliersDashboard" component={SuppliersDashboard} />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <StatusBar barStyle='light-content'
+        backgroundColor="transparent"
+        translucent />
+      <RootRoutes />
     </ThemeProvider>
   );
 }

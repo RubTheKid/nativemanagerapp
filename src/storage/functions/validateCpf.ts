@@ -1,4 +1,4 @@
-export const validCpfs = ["28733984000", "88388506072", "39828983079"];
+export const validCpfs = ["00000000000", "11111111111", "22222222222"];
 
 export function ValidateCpf(cpf: string) {
     if (validCpfs.includes(cpf)) {
