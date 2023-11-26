@@ -1,6 +1,6 @@
 import { SellerControlDTO } from "../../storage/DTOs/SellerControlDTO"
 
-import { Container, Description, Amount, Footer, Category, Date } from '../ui/Cards/style';
+import { Container, Description, Amount, Footer, Category, Date } from './cardStyles';
 
 
 type Props = {

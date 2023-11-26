@@ -3,7 +3,7 @@ import { TextInputProps } from 'react-native'
 import {
   Container,
   InputValueStyle
-} from '../ui/Inputs/styles'
+} from './inputStyles'
 
 type InputProps = TextInputProps
 

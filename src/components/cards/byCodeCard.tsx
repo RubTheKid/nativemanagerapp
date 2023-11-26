@@ -1,4 +1,4 @@
-import { Amount, Container, Description, Local } from '../ui/Cards/style'
+import { Amount, Container, Description, Local } from './cardStyles'
 
 
 type Props = {
