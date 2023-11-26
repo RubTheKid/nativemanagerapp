@@ -4,7 +4,7 @@ import { SellerControlDTO } from "../storage/DTOs/SellerControlDTO";
 import { getAllSellers } from "../storage/functions/getAllSellers";
 import { useFocusEffect } from "@react-navigation/native";
 import { Container, Transactions } from "../components/ui/.global/styles/contentStyles";
-import { Header } from "../components/ui/Header";
+import { Header } from "../components/ui/.global/Header";
 import { ListSells } from "../components/cards/cards";
 
 export function ListExpenses(){

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Header } from "../components/ui/Header";
+import { Header } from "../components/ui/.global/Header";
 import { Container } from '../components/ui/.global/styles/contentStyles'
 
 import { ValidateCpf } from "../storage/functions/validateCpf";

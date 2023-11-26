@@ -1,14 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 import { useFocusEffect } from "@react-navigation/native";
 
-import { Header } from "../components/ui/Header";
+import { Header } from "../components/ui/.global/Header";
 
 import { Container, TextCard, Transactions } from "../components/ui/.global/styles/contentStyles";
 
 import { validCpfs } from "../storage/functions/validateCpf";
 import { getAllSellers } from "../storage/functions/getAllSellers";
 import { ListCardByCode } from "../components/cards/byCodeCard";
-import { HeaderContainer } from "../components/ui/Header/styles";
+import { HeaderContainer } from "../components/ui/.global/Header/styles";
 import { FlatList } from "react-native";
 
 

@@ -4,7 +4,7 @@ import { Alert, Button, FlatList } from "react-native";
 import { ValidateCpf } from "../storage/functions/validateCpf";
 import { getAllSellers } from "../storage/functions/getAllSellers";
 import { Container, TextCard, Transactions } from "../components/ui/.global/styles/contentStyles"
-import { Header } from "../components/ui/Header";
+import { Header } from "../components/ui/.global/Header";
 import { Input } from "../components/inputs/input";
 import { ListSells } from "../components/cards/cards";
 
