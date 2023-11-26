@@ -19,7 +19,7 @@ export function ListByCode(){
         comission:  number,
         salesQuantity: number,
         inss: number,
-        liquidSalary:number,
+        netSalary:number,
         salary: number
     }[]>([]);
 
@@ -31,7 +31,7 @@ export function ListByCode(){
           comission:  number,
           salesQuantity: number,
           inss: number,
-          liquidSalary: number,
+          netSalary: number,
           salary: number
         }[] = [] ; 
     
@@ -40,7 +40,7 @@ export function ListByCode(){
           let comission = 0;
           let salesQuantity = 0;
           let inss = 0;
-          let liquidSalary = 0;
+          let netSalary = 0;
           const salary = 1300;
     
           data.forEach(d => {
@@ -63,14 +63,14 @@ export function ListByCode(){
         })
     
         inss = (salary + comission ) * 0.08
-        liquidSalary = (salary + comission) - inss
+        netSalary = (salary + comission) - inss
         const dataExpense = {
           cpf: cpf,
           salesValue: salesValue,
           comission:  comission,
           salesQuantity: salesQuantity,
           inss: inss,
-          liquidSalary: liquidSalary,
+          netSalary: netSalary,
           salary: salary
         }
         console.log("VENDA:", dataExpense)

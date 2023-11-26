@@ -8,7 +8,7 @@ type Props = {
         comission:  number,
         salesQuantity: number,
         inss: number,
-        liquidSalary: number,
+        netSalary: number,
         salary: number
     }};
 
@@ -20,7 +20,7 @@ type Props = {
             <Local>Total de Comissões: ${(Math.round(data.comission * 100) / 100).toFixed(2)}</Local>
             <Local>Salário + Comissões: ${(Math.round((data.comission + data.salary) * 100) / 100).toFixed(2)}</Local>
             <Local>INSS: ${(Math.round((data.inss) * 100) / 100).toFixed(2)}</Local>
-            <Local>Salário Líquido: ${(Math.round((data.liquidSalary) * 100) / 100).toFixed(2)}</Local>
+            <Local>Salário Líquido: ${(Math.round((data.netSalary) * 100) / 100).toFixed(2)}</Local>
           </Container>
         );
       }
