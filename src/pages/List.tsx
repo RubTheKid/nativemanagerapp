@@ -12,7 +12,6 @@ export function ListExpenses(){
 
 async function loadDataSells(){
     const data = await getAllSellers();
-    console.log(`vendedores: ${data}`)
     setListExpenses(data)
 }
 
