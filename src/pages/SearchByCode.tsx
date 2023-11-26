@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { SellerControlDTO } from "../../storage/DTOs/SellerControlDTO";
+import { SellerControlDTO } from "../storage/DTOs/SellerControlDTO";
 import { Alert, Button, FlatList } from "react-native";
-import { ValidateCpf } from "../../storage/functions/validateCpf";
-import { getAllSellers } from "../../storage/functions/getAllSellers";
-import { Container, TextCard, Transactions } from "./styles";
-import { Header } from "../../components/ui/Header";
-import { Input } from "../../components/Input";
-import { ListSells } from "../../components/Card";
+import { ValidateCpf } from "../storage/functions/validateCpf";
+import { getAllSellers } from "../storage/functions/getAllSellers";
+import { Container, TextCard, Transactions } from "../components/ui/.global/styles/contentStyles"
+import { Header } from "../components/ui/Header";
+import { Input } from "../components/Input";
+import { ListSells } from "../components/Card";
 
 export function SearchByCode() {
     const [cpf, setCpf] = useState(""); 

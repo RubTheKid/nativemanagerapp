@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { Header } from "../../components/ui/Header";
-import { Container } from '../../components/ui/.global/styles/contentStyles'
+import { Header } from "../components/ui/Header";
+import { Container } from '../components/ui/.global/styles/contentStyles'
 
-import { ValidateCpf } from "../../storage/functions/validateCpf";
+import { ValidateCpf } from "../storage/functions/validateCpf";
 import { Alert, Button } from "react-native";
-import { formatAmount } from "../../storage/functions/formatAmount";
-import { spendingCreate } from "../../storage/functions/spendingCreate";
-import { getAllSellers } from "../../storage/functions/getAllSellers";
-import { Input } from "../../components/Input";
-import { InputAmount } from "../../components/InputAmount";
-import { InputDate } from "../../components/InputDate";
+import { formatAmount } from "../storage/functions/formatAmount";
+import { spendingCreate } from "../storage/functions/spendingCreate";
+import { getAllSellers } from "../storage/functions/getAllSellers";
+import { Input } from "../components/Input";
+import { InputAmount } from "../components/InputAmount";
+import { InputDate } from "../components/InputDate";
+
+import { MyButton } from '../components/ui/.global/Button/index'
 
 export function SellersDashboard(){
 

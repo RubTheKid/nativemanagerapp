@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { FlatList } from 'react-native'
-import { SellerControlDTO } from "../../storage/DTOs/SellerControlDTO";
-import { getAllSellers } from "../../storage/functions/getAllSellers";
+import { SellerControlDTO } from "../storage/DTOs/SellerControlDTO";
+import { getAllSellers } from "../storage/functions/getAllSellers";
 import { useFocusEffect } from "@react-navigation/native";
-import { Container, Transactions } from "../../components/ui/.global/styles/contentStyles";
-import { Header } from "../../components/ui/Header";
-import { ListSells } from "../../components/Card";
+import { Container, Transactions } from "../components/ui/.global/styles/contentStyles";
+import { Header } from "../components/ui/Header";
+import { ListSells } from "../components/Card";
 
 export function ListExpenses(){
     const [dataExpenses, setListExpenses] = useState<SellerControlDTO[]>([]);
