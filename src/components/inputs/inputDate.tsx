@@ -2,15 +2,15 @@ import { TextInputProps } from 'react-native'
 
 import {
   Container,
-  InputStyle
-} from './styles'
+  InputValueStyle
+} from '../ui/Inputs/styles'
 
 type InputProps = TextInputProps
 
 export function InputDate({ ...rest }: InputProps) {
   return (
     <Container>
-      <InputStyle
+      <InputValueStyle
         type={'datetime'}
         options={{
           format: 'DD/MM/YYYY'

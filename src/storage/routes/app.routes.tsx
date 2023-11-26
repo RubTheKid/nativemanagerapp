@@ -1,8 +1,8 @@
 import { BottomTabNavigationProp, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { SellersDashboard } from "../pages/Dashboard";
-import { ListExpenses } from "../pages/List";
-import { ListByCode } from "../pages/ListByCode";
-import { SearchByCode } from "../pages/SearchByCode";
+import { SellersDashboard } from "../../pages/Dashboard";
+import { ListExpenses } from "../../pages/List";
+import { ListByCode } from "../../pages/ListByCode";
+import { SearchByCode } from "../../pages/SearchByCode";
 import { MaterialIcons } from '@expo/vector-icons';
 
 type AppRoutes = {

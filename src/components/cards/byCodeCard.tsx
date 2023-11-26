@@ -1,4 +1,4 @@
-import { Amount, Container, Description, Local } from "./styles"
+import { Amount, Container, Description, Local } from '../ui/Cards/style'
 
 
 type Props = {
@@ -16,9 +16,9 @@ type Props = {
         return (
           <Container>
             <Description>CPF: {data.cpf}</Description>
-            <Amount>Total da Venda: ${(Math.round(data.salesValue * 100) / 100).toFixed(2)}</Amount>
-            <Local>Total da Comissão: ${(Math.round(data.comission * 100) / 100).toFixed(2)}</Local>
-            <Local>Salário + Comissão: ${(Math.round((data.comission + data.salary) * 100) / 100).toFixed(2)}</Local>
+            <Amount>Total de Vendas: ${(Math.round(data.salesValue * 100) / 100).toFixed(2)}</Amount>
+            <Local>Total de Comissões: ${(Math.round(data.comission * 100) / 100).toFixed(2)}</Local>
+            <Local>Salário + Comissões: ${(Math.round((data.comission + data.salary) * 100) / 100).toFixed(2)}</Local>
             <Local>INSS: ${(Math.round((data.inss) * 100) / 100).toFixed(2)}</Local>
             <Local>Salário Líquido: ${(Math.round((data.liquidSalary) * 100) / 100).toFixed(2)}</Local>
           </Container>

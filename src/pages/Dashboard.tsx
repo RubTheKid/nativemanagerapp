@@ -7,9 +7,9 @@ import { Alert, Button } from "react-native";
 import { formatAmount } from "../storage/functions/formatAmount";
 import { spendingCreate } from "../storage/functions/spendingCreate";
 import { getAllSellers } from "../storage/functions/getAllSellers";
-import { Input } from "../components/Input";
-import { InputAmount } from "../components/InputAmount";
-import { InputDate } from "../components/InputDate";
+import { Input } from "../components/inputs/input";
+import { InputAmount } from "../components/inputs/inputAmount";
+import { InputDate } from "../components/inputs/inputDate";
 
 import { MyButton } from '../components/ui/.global/Button/index'
 

@@ -2,15 +2,15 @@ import { TextInputProps } from 'react-native'
 
 import {
   Container,
-  InputStyle
-} from './styles'
+  InputValueStyle
+} from '../ui/Inputs/styles'
 
 type InputProps = TextInputProps
 
 export function InputAmount({ ...rest }: InputProps) {
   return (
     <Container>
-      <InputStyle
+      <InputValueStyle
         type={'money'}
         options={{
           precision: 2,

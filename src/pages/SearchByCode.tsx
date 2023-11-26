@@ -5,8 +5,8 @@ import { ValidateCpf } from "../storage/functions/validateCpf";
 import { getAllSellers } from "../storage/functions/getAllSellers";
 import { Container, TextCard, Transactions } from "../components/ui/.global/styles/contentStyles"
 import { Header } from "../components/ui/Header";
-import { Input } from "../components/Input";
-import { ListSells } from "../components/Card";
+import { Input } from "../components/inputs/input";
+import { ListSells } from "../components/cards/cards";
 
 export function SearchByCode() {
     const [cpf, setCpf] = useState(""); 

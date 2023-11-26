@@ -5,7 +5,7 @@ import { getAllSellers } from "../storage/functions/getAllSellers";
 import { useFocusEffect } from "@react-navigation/native";
 import { Container, Transactions } from "../components/ui/.global/styles/contentStyles";
 import { Header } from "../components/ui/Header";
-import { ListSells } from "../components/Card";
+import { ListSells } from "../components/cards/cards";
 
 export function ListExpenses(){
     const [dataExpenses, setListExpenses] = useState<SellerControlDTO[]>([]);
