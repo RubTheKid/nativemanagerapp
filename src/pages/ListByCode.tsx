@@ -8,7 +8,7 @@ import { Container, TextCard, Transactions } from "../components/ui/.global/styl
 import { validCpfs } from "../storage/functions/validateCpf";
 import { getAllSellers } from "../storage/functions/getAllSellers";
 import { ListCardByCode } from "../components/cards/byCodeCard";
-import { HeaderContainer } from "../components/ui/.global/Header/styles";
+
 import { FlatList } from "react-native";
 
 

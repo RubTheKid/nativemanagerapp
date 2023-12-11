@@ -12,23 +12,26 @@ import { InputAmount } from "../components/inputs/inputAmount";
 import { InputDate } from "../components/inputs/inputDate";
 
 import { MyButton } from '../components/ui/.global/Button/index'
+import { ValidateCode } from "../storage/functions/validateCode";
+import { getAllVehicles } from "../storage/functions/getAllVehicles";
+import { CreateVehicle } from "../storage/functions/createVehicle";
 
-export function SellersDashboard(){
+export function VehiclesDashboard(){
 
-    const [cpf, setCpf] = useState("");
-    const [product, setProduct] = useState("");
+    const [code, setCode] = useState("");
+    const [name, setName] = useState("");
     const [value, setValue] = useState("");
     const [date, setDate] = useState("");
     
     async function handleAddNewSpending() {
 
-        const validatedCpf = ValidateCpf(cpf)
+        const validatedCode = ValidateCode(code)
 
-        if(!validatedCpf){
-            return Alert.alert("CPF Inválido.")
+        if(!validatedCode){
+            return Alert.alert("Codigo Inválido.")
         }
-        if(!product){
-            return Alert.alert("Digite o nome do produto.")
+        if(!name){
+            return Alert.alert("Digite o nome do veículo.")
         }
         if(!value){
             return Alert.alert("Insira o valor da venda.")
@@ -38,55 +41,55 @@ export function SellersDashboard(){
         }
         
         const data = {
-            cpf,
+            code,
             value: formatAmount(value),
-            product,
+            name,
             date
         }
 
-        await spendingCreate(data)
-        setCpf("")
-        setProduct("")
+        await CreateVehicle(data)
+        setCode("")
+        setName("")
         setValue("")
         setDate("")
-        const result = await getAllSellers()
+        const result = await getAllVehicles()
         console.log(result)
-        return Alert.alert("Venda adicionada com sucesso")
+        return Alert.alert("Veículo adicionado com sucesso")
     }
     
     return(
         <Container>
-            <Header title="Controle de vendas" />
+            <Header title="Controle de veículos" />
 
-            <Input placeholder="CPF do Vendedor"
+            <Input placeholder="Código do veículo"
                 placeholderTextColor="#363F5F"
-                value={cpf}
-                onChangeText={(value) => setCpf(value)}
+                value={code}
+                onChangeText={(value) => setCode(value)}
             />
 
             <Input
-                placeholder="Produto"
+                placeholder="Nome"
                 placeholderTextColor="#363F5F"
-                value={product}
-                onChangeText={(value) => setProduct(value)}
+                value={name}
+                onChangeText={(value) => setName(value)}
             />
 
             <InputAmount
-                placeholder="Valor da Venda"
+                placeholder="Valor do Veículo"
                 placeholderTextColor="#363F5F"
                 value={value}
                 onChangeText={(value) => setValue(value)}
             />
 
             <InputDate
-                placeholder="Data da Venda"
+                placeholder="Data da Entrada"
                 placeholderTextColor="#363F5F"
                 value={date}
                 onChangeText={(value) => setDate(value)}
             />
 
         <Button title="Adicionar" onPress={handleAddNewSpending} />
-
+        
             
         </Container>
         

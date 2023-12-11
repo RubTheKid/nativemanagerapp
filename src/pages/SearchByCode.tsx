@@ -6,54 +6,59 @@ import { getAllSellers } from "../storage/functions/getAllSellers";
 import { Container, TextCard, Transactions } from "../components/ui/.global/styles/contentStyles"
 import { Header } from "../components/ui/.global/Header";
 import { Input } from "../components/inputs/input";
-import { ListSells } from "../components/cards/cards";
+import { ValidateCode } from "../storage/functions/validateCode";
+import { getAllVehicles } from "../storage/functions/getAllVehicles";
+import { VehicleDTO } from "../storage/DTOs/VehicleDTO";
+import { VehicleList } from "./VehicleList";
+import { ListCard } from "../components/cards/listCard";
+// import { ListSells } from "../components/cards/cards";
 
 export function SearchByCode() {
-    const [cpf, setCpf] = useState(""); 
-    const [product, setProduct] = useState(""); 
-    const [dataSells, setDataSells] = useState<SellerControlDTO[]>([]);
-    const [addSupplier, setAddSupplier] = useState<number | null>(null);
+    const [code, setCode] = useState(""); 
+    const [name, setName] = useState(""); 
+    const [dataSells, setDataSells] = useState<VehicleDTO[]>([]);
+    // const [addSupplier, setAddSupplier] = useState<number | null>(null);
     const [total, setTotal] = useState<number | null>(null);
     const [searchResult, setSearchResult] = useState<number | null>(null);
 
     async function handleSearchSpending() {
-        if (cpf.trim() === "" && product.trim() === "") {
-          return Alert.alert("Pesquisa de Vendas", "Insira ao menos o cpf e produto!");
+        if (code.trim() === "" && name.trim() === "") {
+          return Alert.alert("Pesquisa de Vendas", "Insira o código ou o nome do veículo!");
         }
         
-        if (cpf.trim() != "") {
-          const cpfValidated = ValidateCpf(cpf);
+        if (code.trim() != "") {
+          const codeValidated = ValidateCode(code);
     
-          if (!cpfValidated) {
+          if (!codeValidated) {
             return Alert.alert(
-              "CPF inválido!",
-              "Digite um CPF válido."
+              "Código inválido",
+              "insira um código válido"
             );
           }
         }
     
-        const data = await getAllSellers();
+        const data = await getAllVehicles();
         let newData;
-        if (cpf.trim() != "" && product.trim() != "")
+        if (code.trim() != "" && name.trim() != "")
         {
           newData = data.filter(
             (item) =>
-              item.cpf === cpf.trim() && item.product.toLowerCase().includes(product.trim().toLowerCase())
+              item.code === code.trim() && item.name.toLowerCase().includes(name.trim().toLowerCase())
           );
-        } else if (cpf.trim() != "")
+        } else if (code.trim() != "")
         {
           newData = data.filter(
             (item) =>
-              item.cpf === cpf.trim()
+              item.code === code.trim()
           );
         } else {
           newData = data.filter(
             (item) =>
-            item.product.toLowerCase().includes(product.trim().toLowerCase())
+            item.name.toLowerCase().includes(name.trim().toLowerCase())
           );
         }
     
-        function Calculate(total: number, item: SellerControlDTO) {
+        function Calculate(total: number, item: VehicleDTO) {
           return total + item.value;
         }
     
@@ -61,11 +66,11 @@ export function SearchByCode() {
         const total = newData.length;
     
         setSearchResult(soma)
-        setAddSupplier(soma);
+        // setAddSupplier(soma);
         setTotal(total);
         setDataSells(newData);
-        setCpf("");
-        setProduct("");
+        setCode("");
+        setName("");
       }
 
       return (
@@ -75,15 +80,15 @@ export function SearchByCode() {
           <Input
             placeholder="CPF do Vendedor"
             placeholderTextColor="#363F5F"
-            value={cpf}
-            onChangeText={(value) => setCpf(value)}
+            value={code}
+            onChangeText={(value) => setCode(value)}
           />
     
           <Input
             placeholder="Nome do Produto"
             placeholderTextColor="#363F5F"
-            value={product}
-            onChangeText={(value) => setProduct(value)}
+            value={name}
+            onChangeText={(value) => setName(value)}
           />
     
           <Button title="Pesquisa" onPress={handleSearchSpending} />
@@ -98,7 +103,7 @@ export function SearchByCode() {
               <Transactions>
               <FlatList
                 data={dataSells}
-                renderItem={({ item }) => <ListSells data={item} />}
+                renderItem={({ item }) => <ListCard data={item} />}
                 showsVerticalScrollIndicator={false}
               />
             </Transactions>
