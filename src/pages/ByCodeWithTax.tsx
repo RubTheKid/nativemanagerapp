@@ -53,7 +53,7 @@ async function handleSearchSpending() {
       name: item.name,
       date: item.date,
       tax: item.value * 0.02,
-      
+      totalValue: item.value + (item.value * 0.02),
       
     }
     return dto;

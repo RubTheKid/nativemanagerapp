@@ -32,7 +32,7 @@ export function ListCardCode({data} : Props){
                 
             </Footer>
             <Footer>
-            <Category>Valor com imposto: R$ {{data.tax + data.value}}</Category>
+            <Category>Valor com imposto: R$ {data.totalValue?.toFixed(2)}</Category>
             </Footer>
         </Container>
     )

@@ -3,6 +3,7 @@ export type VehicleDTO = {
     value: number;
     name: String;
     date: String;
-    tax?: number
+    tax?: number;
+    totalValue?: number
   };
   
