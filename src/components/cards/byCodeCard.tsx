@@ -1,26 +1,18 @@
 import { Amount, Container, Description, Local } from './cardStyles'
 
 
+    export type Totals = { code: string, quantity: number, value: number };
 type Props = {
-    data: {
-        cpf: string,
-        salesValue: number,
-        comission:  number,
-        salesQuantity: number,
-        inss: number,
-        netSalary: number,
-        salary: number
-    }};
+  data: Totals
+};
+
 
     export function ListCardByCode({ data }: Props) {
         return (
           <Container>
-            <Description>CPF: {data.cpf}</Description>
-            <Amount>Total de Vendas: ${(Math.round(data.salesValue * 100) / 100).toFixed(2)}</Amount>
-            <Local>Total de Comissões: ${(Math.round(data.comission * 100) / 100).toFixed(2)}</Local>
-            <Local>Salário + Comissões: ${(Math.round((data.comission + data.salary) * 100) / 100).toFixed(2)}</Local>
-            <Local>INSS: ${(Math.round((data.inss) * 100) / 100).toFixed(2)}</Local>
-            <Local>Salário Líquido: ${(Math.round((data.netSalary) * 100) / 100).toFixed(2)}</Local>
-          </Container>
+          <Description>Código: {data.code}</Description>
+          <Amount>Total de Veículos: {data.quantity}</Amount>
+          <Local>Valor a Pagar: ${(Math.round(data.value)).toFixed(2)}</Local>
+        </Container>
         );
       }

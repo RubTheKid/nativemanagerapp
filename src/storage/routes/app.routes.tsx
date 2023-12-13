@@ -40,6 +40,12 @@ export function AppRoutes(){
               <MaterialIcons name="code" size={size} color={color} />
             ),
           }}/>
+          <Screen name = "TotaisVeiculos" component={ListByCode} 
+        options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialIcons name="code" size={size} color={color} />
+            ),
+          }}/>
         <Screen name = "Search" component={SearchByCode} 
         options={{
             tabBarIcon: ({ color, size }) => (
